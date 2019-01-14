@@ -51,7 +51,7 @@ $(document).ready(function() {
 			// end validate password
 
 			// validate accaunt
-			if ( ( $('#mail').val() !== '' ) && ( $('#password').val() !== '' ) ) {
+			if ( ( $('#mail').val() !== '' ) && ( $('#password').val() !== '' ) && ( patern.test( $('#mail').val() ) ) ) {
 				if( ( $('#mail').val() === UserMail ) && ( $('#password').val() === UserPassword ) ) {
 				$('#noacc').hide();
 				window.open('success.html');

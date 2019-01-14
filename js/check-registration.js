@@ -48,11 +48,12 @@ $(document).ready(function() {
 			// end validate password
 
 			// validate accaunt
-			if ( ( $('#mail').val() !== '' ) && ( $('#password').val() !== '' ) ) {
+			if ( ( $('#mail').val() !== '' ) && ( $('#password').val() !== '' ) && ( patern.test( $('#mail').val() ) ) ) {
 				if( ( $('#mail').val() === UserMail ) ) {
 				$('#noacc').show();
 				}	else {
 				$('#noacc').hide();
+				window.open('success.html');
 				}
 			}
 			// end validate account

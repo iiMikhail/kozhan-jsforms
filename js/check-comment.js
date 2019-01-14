@@ -21,6 +21,7 @@ var validComment = (function(){
 			$('#error').show();
 		} else {
 			$('#error').hide();
+			window.open('success.html');
 		}	
 	}
 	return {
