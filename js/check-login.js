@@ -33,12 +33,14 @@ $(document).ready(function() {
 				$('#nomail').hide();
 			}
 			var patern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
-			// var patern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-			if ( patern.test( $('#mail').val() ) ){
-				$('#fmail').hide();
-			} else {
-				$('#fmail').show();
+			if ( $('#mail').val() !== '' ) {
+				if ( patern.test( $('#mail').val() ) ){
+					$('#fmail').hide();
+				} else {
+					$('#fmail').show();
+				}
 			}
+			
 
 			// validate password
 			if( $('#password').val().trim() == '' ) {
@@ -49,9 +51,10 @@ $(document).ready(function() {
 			// end validate password
 
 			// validate accaunt
-			if ( ( $('#mail').val() !== '' ) || ( $('#password').val() !== '' ) ) {
+			if ( ( $('#mail').val() !== '' ) && ( $('#password').val() !== '' ) ) {
 				if( ( $('#mail').val() === UserMail ) && ( $('#password').val() === UserPassword ) ) {
 				$('#noacc').hide();
+				window.open('success.html');
 				}	else {
 				$('#noacc').show();
 				}

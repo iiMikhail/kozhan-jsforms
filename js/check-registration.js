@@ -32,12 +32,13 @@ $(document).ready(function() {
 				$('#nomail').hide();
 			}
 			var patern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
-			if ( patern.test( $('#mail').val() ) ){
-				$('#fmail').hide();
-			} else {
-				$('#fmail').show();
+			if ( $('#mail').val() !== '' ) {
+				if ( patern.test( $('#mail').val() ) ){
+					$('#fmail').hide();
+				} else {
+					$('#fmail').show();
+				}
 			}
-
 			// validate password
 			if( $('#password').val().trim() == '' ) {
 				$('#nopas').show();
